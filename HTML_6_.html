@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .color-picker {
+      background: white;
+      padding: 40px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #colorBox {
+      width: 200px;
+      height: 150px;
+      background: #3498db;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    input[type="color"] {
+      width: 100px;
+      height: 50px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #colorCode {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="color-picker">
+    <h1>Color Picker</h1>
+
+    <div id="colorBox"></div>
+
+    <input type="color" id="colorInput" value="#3498db">
+
+    <p id="colorCode">#3498DB</p>
+  </div>
+
+  <script>
+    const colorInput = document.getElementById("colorInput");
+    const colorBox = document.getElementById("colorBox");
+    const colorCode = document.getElementById("colorCode");
+
+    colorInput.addEventListener("input", function() {
+      const color = colorInput.value;
+
+      colorBox.style.backgroundColor = color;
+      colorCode.textContent = color.toUpperCase();
+    });
+  </script>
+
+</body>
+</html>
